@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shop | Sincere Outline</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <!-- Add this in the <head> of all pages for icon font -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+ <!-- Navigation -->
+<nav class="navbar">
+    <div class="container nav-flex">
+        <div class="logo">
+            <h1>✨ SINCERE OUTLINE</h1>
+            <p>Premium Professional Attire</p>
+        </div>
+        <div class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="shop.html" class="active">Shop</a>
+            <a href="collections.html">Collections</a>
+            <a href="about.html">About</a>
+            <a href="contact.html">Contact</a>
+            <a href="cart.html" class="cart-link">
+                Cart <span class="cart-count" id="cartCount">0</span>
+            </a>
+        </div>
+        <button class="mobile-menu-btn">☰</button>
+    </div>
+</nav>   
+
+    <section class="shop-header">
+        <div class="container">
+            <h1>Our Collection</h1>
+            <p>Browse our complete range of premium professional scrubs</p>
+        </div>
+    </section>
+
+    <section class="shop-content">
+        <div class="container">
+            <div class="shop-layout">
+                <!-- Filters Sidebar -->
+                <aside class="filters-sidebar">
+                    <h3>Filters</h3>
+                    
+                    <div class="filter-group">
+                        <h4>Category</h4>
+                        <label><input type="checkbox" class="filter-checkbox" data-filter="category" value="tops"> Tops & Tunics</label>
+                        <label><input type="checkbox" class="filter-checkbox" data-filter="category" value="bottoms"> Pants & Trousers</label>
+                        <label><input type="checkbox" class="filter-checkbox" data-filter="category" value="sets"> Complete Sets</label>
+                        <label><input type="checkbox" class="filter-checkbox" data-filter="category" value="jackets"> Jackets & Layers</label>
+                    </div>
+
+                    <div class="filter-group">
+                        <h4>Price Range</h4>
+                        <label><input type="checkbox" class="filter-checkbox" data-filter="price" value="0-400"> Under R400</label>
+                        <label><input type="checkbox" class="filter-checkbox" data-filter="price" value="400-600"> R400 - R600</label>
+                        <label><input type="checkbox" class="filter-checkbox" data-filter="price" value="600-800"> R600 - R800</label>
+                        <label><input type="checkbox" class="filter-checkbox" data-filter="price" value="800+"> R800+</label>
+                    </div>
+
+                    <div class="filter-group">
+                        <h4>Collection Tier</h4>
+                        <label><input type="checkbox" class="filter-checkbox" data-filter="tier" value="Essential"> Essential</label>
+                        <label><input type="checkbox" class="filter-checkbox" data-filter="tier" value="Premium"> Premium</label>
+                        <label><input type="checkbox" class="filter-checkbox" data-filter="tier" value="Luxury"> Luxury</label>
+                        <label><input type="checkbox" class="filter-checkbox" data-filter="tier" value="Signature"> Signature</label>
+                    </div>
+
+                    <button class="clear-filters" onclick="clearFilters()">Clear All Filters</button>
+                </aside>
+
+                <!-- Products Grid -->
+                <div class="products-main">
+                    <div class="products-header">
+                        <p id="productCount">Showing all products</p>
+                        <select id="sortSelect" onchange="sortProducts()">
+                            <option value="default">Default Sorting</option>
+                            <option value="price-low">Price: Low to High</option>
+                            <option value="price-high">Price: High to Low</option>
+                            <option value="name-asc">Name: A to Z</option>
+                            <option value="name-desc">Name: Z to A</option>
+                        </select>
+                    </div>
+                    <div class="product-grid" id="shopGrid"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h3>✨ SINCERE OUTLINE</h3>
+                    <p>Premium professional attire for beauty and healthcare practitioners.</p>
+                </div>
+                <div class="footer-col">
+                    <h4>Quick Links</h4>
+                    <a href="shop.html">Shop</a>
+                    <a href="collections.html">Collections</a>
+                    <a href="about.html">About Us</a>
+                    <a href="contact.html">Contact</a>
+                </div>
+                <div class="footer-col">
+                    <h4>Contact Info</h4>
+                    <p>📧 sincere_outline@hotmail.com</p>
+                    <p>📞 +27 (065) 815-7430</p>
+                    <p>🕒 Mon-Fri, 9AM-6PM</p>
+                </div>
+                <div class="footer-col">
+                    <h4>Shipping</h4>
+                    <p>🚚 Free shipping on orders from R600.00</p>
+                    <p>💳 Secure payment options</p>
+                    <p>📦 Premium tracking included</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Sincere Outline — Refined Professional Attire</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+</html>

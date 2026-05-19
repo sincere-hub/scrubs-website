@@ -1,450 +1,141 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
-  <title>Sincere Outline | About Us</title>
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
-    body {
-      font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, sans-serif;
-      background: linear-gradient(135deg, #faf8f6 0%, #f5f2ee 100%);
-      color: #3d2e25;
-      line-height: 1.6;
-    }
-
-    html {
-      scroll-behavior: smooth;
-    }
-
-    .container {
-      max-width: 1280px;
-      margin: 0 auto;
-      padding: 0 24px;
-    }
-
-    .navbar {
-      background: linear-gradient(135deg, #4a3f5e 0%, #5f5076 100%);
-      box-shadow: 0 8px 24px rgba(74, 63, 94, 0.2);
-      padding: 24px 0;
-      position: sticky;
-      top: 0;
-      z-index: 100;
-      border-bottom: 2px solid #c9a961;
-    }
-
-    .nav-flex {
-      display: flex;
-      justify-content: space-between;
-      align-items: baseline;
-      flex-wrap: wrap;
-      gap: 16px;
-    }
-
-    .logo h1 {
-      font-size: 2rem;
-      letter-spacing: -0.5px;
-      color: #ffffff;
-      font-weight: 800;
-    }
-    
-    .logo p {
-      font-size: 0.85rem;
-      color: #d4c5d9;
-    }
-
-    .nav-links {
-      display: flex;
-      gap: 32px;
-    }
-    
-    .nav-links a {
-      text-decoration: none;
-      font-weight: 600;
-      color: #ffffff;
-      transition: 0.3s;
-      text-transform: uppercase;
-      font-size: 0.9rem;
-      letter-spacing: 0.5px;
-    }
-    
-    .nav-links a:hover {
-      color: #c9a961;
-      text-shadow: 0 0 8px rgba(201, 169, 97, 0.5);
-    }
-
-    .hero {
-      padding: 80px 0 60px;
-      text-align: center;
-      background: linear-gradient(135deg, #4a3f5e 0%, #6b5a76 50%, #8b7a94 100%);
-      color: white;
-    }
-
-    .hero h2 {
-      font-size: 3rem;
-      color: #ffffff;
-      font-weight: 800;
-      margin-bottom: 16px;
-      text-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
-    }
-
-    .section {
-      padding: 60px 0;
-      border-bottom: 1px solid #e8dfe8;
-    }
-
-    .section-title {
-      font-size: 2.2rem;
-      margin-bottom: 32px;
-      color: #4a3f5e;
-      font-weight: 800;
-      text-align: center;
-    }
-
-    .section-content {
-      font-size: 1.1rem;
-      color: #5a4d47;
-      line-height: 1.8;
-      max-width: 900px;
-      margin: 0 auto;
-    }
-
-    .values-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-      gap: 32px;
-      margin-top: 40px;
-    }
-
-    .value-card {
-      background: white;
-      padding: 32px;
-      border-radius: 12px;
-      border-left: 4px solid #c9a961;
-      box-shadow: 0 10px 30px rgba(74, 63, 94, 0.1);
-      transition: 0.3s ease;
-    }
-
-    .value-card:hover {
-      transform: translateY(-4px);
-      box-shadow: 0 15px 40px rgba(74, 63, 94, 0.15);
-    }
-
-    .value-card h3 {
-      color: #4a3f5e;
-      font-size: 1.4rem;
-      margin-bottom: 12px;
-    }
-
-    .value-card p {
-      color: #7a6d76;
-      font-size: 0.95rem;
-    }
-
-    .order-steps {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-      gap: 24px;
-      margin-top: 40px;
-    }
-
-    .step {
-      text-align: center;
-      padding: 24px;
-    }
-
-    .step-number {
-      width: 50px;
-      height: 50px;
-      background: linear-gradient(135deg, #5f5076, #8b7a94);
-      color: white;
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 1.5rem;
-      font-weight: 800;
-      margin: 0 auto 16px;
-    }
-
-    .step h3 {
-      color: #4a3f5e;
-      font-size: 1.1rem;
-      margin-bottom: 8px;
-    }
-
-    .step p {
-      color: #7a6d76;
-      font-size: 0.9rem;
-    }
-
-    .contact-info {
-      background: white;
-      padding: 40px;
-      border-radius: 12px;
-      margin-top: 40px;
-      text-align: center;
-      box-shadow: 0 10px 30px rgba(74, 63, 94, 0.1);
-    }
-
-    .contact-item {
-      margin: 20px 0;
-      font-size: 1.1rem;
-    }
-
-    .contact-item strong {
-      color: #4a3f5e;
-      display: block;
-      margin-bottom: 8px;
-      font-size: 0.9rem;
-      text-transform: uppercase;
-      letter-spacing: 1px;
-    }
-
-    .contact-item a {
-      color: #5f5076;
-      text-decoration: none;
-      transition: 0.3s;
-    }
-
-    .contact-item a:hover {
-      color: #c9a961;
-    }
-
-    .form-group {
-      margin: 20px 0;
-      text-align: left;
-    }
-
-    .form-group label {
-      display: block;
-      margin-bottom: 8px;
-      color: #4a3f5e;
-      font-weight: 600;
-      font-size: 0.9rem;
-      text-transform: uppercase;
-      letter-spacing: 0.5px;
-    }
-
-    .form-group input,
-    .form-group textarea {
-      width: 100%;
-      padding: 12px 16px;
-      border: 1px solid #d4c5d9;
-      border-radius: 8px;
-      font-family: 'Inter', system-ui, sans-serif;
-      font-size: 1rem;
-      color: #3d2e25;
-      transition: 0.3s;
-    }
-
-    .form-group input:focus,
-    .form-group textarea:focus {
-      outline: none;
-      border-color: #c9a961;
-      box-shadow: 0 0 0 3px rgba(201, 169, 97, 0.1);
-    }
-
-    .form-group textarea {
-      resize: vertical;
-      min-height: 120px;
-    }
-
-    .submit-btn {
-      background: linear-gradient(135deg, #5f5076 0%, #8b7a94 100%);
-      border: none;
-      color: white;
-      padding: 14px 40px;
-      font-weight: 700;
-      border-radius: 8px;
-      cursor: pointer;
-      transition: 0.3s;
-      font-size: 1rem;
-      text-transform: uppercase;
-      letter-spacing: 0.5px;
-      width: 100%;
-      margin-top: 12px;
-    }
-
-    .submit-btn:hover {
-      transform: scale(0.98);
-      box-shadow: 0 8px 16px rgba(74, 63, 94, 0.3);
-    }
-
-    footer {
-      background: linear-gradient(135deg, #4a3f5e 0%, #5f5076 100%);
-      padding: 40px 0;
-      margin-top: 60px;
-      text-align: center;
-      color: #ffffff;
-      border-top: 2px solid #c9a961;
-    }
-
-    footer p {
-      margin: 10px 0;
-      font-weight: 500;
-    }
-
-    @media (max-width: 700px) {
-      .nav-flex {
-        flex-direction: column;
-        align-items: center;
-      }
-      .hero h2 {
-        font-size: 2.2rem;
-      }
-      .section-title {
-        font-size: 1.8rem;
-      }
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us | Sincere Outline</title>
+    <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
-
-<div class="navbar">
-  <div class="container nav-flex">
-    <div class="logo">
-      <h1>✨ SINCERE OUTLINE</h1>
-      <p>Premium Professional Attire</p>
-    </div>
-    <div class="nav-links">
-      <a href="scrubs.html">Home</a>
-      <a href="scrubs.html#services">Collection</a>
-      <a href="about.html">About</a>
-      <a href="about.html#contact">Contact</a>
-    </div>
-  </div>
-</div>
-
-<section class="hero">
-  <div class="container">
-    <h2>About Sincere Outline</h2>
-    <p style="font-size: 1.2rem; margin-top: 16px; color: #e8dfe8;">Excellence in Professional Attire Since 2025</p>
-  </div>
-</section>
-
-<div class="container">
-  <section class="section" id="about">
-    <h2 class="section-title">Our Story & Mission</h2>
-    <div class="section-content">
-      <p>At Sincere Outline, we believe that professional attire should reflect the dedication and excellence of those who wear it. Founded with a passion for quality, comfort, and sophistication, we craft premium scrubs and professional uniforms designed specifically for beauty professionals and healthcare practitioners.</p>
-      <p style="margin-top: 20px;">Our mission is simple yet profound: to provide meticulously designed professional wear that empowers individuals to present their best selves while maintaining the utmost comfort and durability. Every stitch, every fabric choice, and every design detail is carefully considered to ensure our clients receive nothing but the finest.</p>
-    </div>
-
-    <div class="values-grid">
-      <div class="value-card">
-        <h3>🎯 Quality</h3>
-        <p>Premium fabrics, impeccable craftsmanship, and rigorous quality control ensure every piece exceeds expectations.</p>
-      </div>
-      <div class="value-card">
-        <h3>💫 Elegance</h3>
-        <p>Sophisticated designs that blend functionality with timeless style, creating professional confidence.</p>
-      </div>
-      <div class="value-card">
-        <h3>🤝 Integrity</h3>
-        <p>Transparent pricing, honest communication, and genuine customer care form the foundation of our business.</p>
-      </div>
-      <div class="value-card">
-        <h3>🌟 Innovation</h3>
-        <p>Continuously evolving our collections to meet the changing needs of modern professionals.</p>
-      </div>
-    </div>
-  </section>
-
-  <section class="section" id="ordering">
-    <h2 class="section-title">How to Order</h2>
-    <div class="section-content" style="margin-bottom: 30px;">
-      <p>Ordering from Sincere Outline is seamless and secure. Follow these simple steps to acquire your premium professional attire:</p>
-    </div>
-
-    <div class="order-steps">
-      <div class="step">
-        <div class="step-number">1</div>
-        <h3>Browse Collection</h3>
-        <p>Visit our collection page and explore our curated selection of premium scrubs and uniforms.</p>
-      </div>
-      <div class="step">
-        <div class="step-number">2</div>
-        <h3>Select Items</h3>
-        <p>Choose your preferred items, sizes, and colors from our diverse range.</p>
-      </div>
-      <div class="step">
-        <div class="step-number">3</div>
-        <h3>Contact Us</h3>
-        <p>Reach out via email or phone with your selection and delivery address.</p>
-      </div>
-      <div class="step">
-        <div class="step-number">4</div>
-        <h3>Secure Payment</h3>
-        <p>Complete payment through our secure payment portal with full confidence.</p>
-      </div>
-      <div class="step">
-        <div class="step-number">5</div>
-        <h3>Fast Delivery</h3>
-        <p>Receive your order promptly with complimentary shipping on orders from R600.00.</p>
-      </div>
-    </div>
-  </section>
-
-  <section class="section" id="contact">
-    <h2 class="section-title">Get In Touch</h2>
-    
-    <div class="contact-info">
-      <div class="contact-item">
-        <strong>📧 Email</strong>
-        <a href="mailto:sincere_outline@hotmail.com">sincere_outline@hotmail.com</a>
-      </div>
-      <div class="contact-item">
-        <strong>📞 Phone</strong>
-        <a href="tel:+27658157430">+27 (065) 815-7430</a>
-      </div>
-      <div class="contact-item">
-        <strong>🚚 Shipping</strong>
-        <p style="color: #7a6d76;">Complimentary shipping on orders from R600.00 | Premium tracking included</p>
-      </div>
-    </div>
-
-    <div style="max-width: 600px; margin: 40px auto;">
-      <h3 style="color: #4a3f5e; margin-bottom: 24px; text-align: center;">Send us a Message</h3>
-      <form action="https://formspree.io/f/xpznqkgj" method="POST">
-        <div class="form-group">
-          <label>Full Name</label>
-          <input type="text" name="name" required placeholder="Your name">
+    <nav class="navbar">
+        <div class="container nav-flex">
+            <div class="logo">
+                <h1>✨ SINCERE OUTLINE</h1>
+                <p>Premium Professional Attire</p>
+            </div>
+            <div class="nav-links">
+                <a href="index.html">Home</a>
+                <a href="shop.html">Shop</a>
+                <a href="collections.html">Collections</a>
+                <a href="about.html" class="active">About</a>
+                <a href="contact.html">Contact</a>
+            </div>
+            <button class="mobile-menu-btn">☰</button>
         </div>
-        <div class="form-group">
-          <label>Email Address</label>
-          <input type="email" name="email" required placeholder="your.email@example.com">
-        </div>
-        <div class="form-group">
-          <label>Subject</label>
-          <input type="text" name="subject" required placeholder="How can we help?">
-        </div>
-        <div class="form-group">
-          <label>Message</label>
-          <textarea name="message" required placeholder="Your message..."></textarea>
-        </div>
-        <button type="submit" class="submit-btn">Send Message</button>
-      </form>
-    </div>
-  </section>
-</div>
+    </nav>
 
-<footer>
-  <div class="container">
-    <p>📧 sincere_outline@hotmail.com &nbsp;|&nbsp; 📞 +27 (065) 815-7430</p>
-    <p style="margin-top: 10px;">💳 Premium payment options • Complimentary shipping on orders from R600.00</p>
-    <p style="margin-top: 16px;">&copy; 2025 Sincere Outline — Refined Professional Attire</p>
-  </div>
-</footer>
+    <section class="about-hero">
+        <div class="container">
+            <h1>About Sincere Outline</h1>
+            <p>Excellence in Professional Attire Since 2025</p>
+        </div>
+    </section>
 
-<script>
-  // Form submission handled by Formspree
-</script>
+    <section class="about-story">
+        <div class="container">
+            <div class="about-grid">
+                <div class="about-text">
+                    <h2>Our Story</h2>
+                    <p>At Sincere Outline, we believe that professional attire should reflect the dedication and excellence of those who wear it. Founded with a passion for quality, comfort, and sophistication, we craft premium scrubs and professional uniforms designed specifically for beauty professionals and healthcare practitioners.</p>
+                    <p>Our mission is simple yet profound: to provide meticulously designed professional wear that empowers individuals to present their best selves while maintaining the utmost comfort and durability.</p>
+                </div>
+                <div class="about-image">
+                    <div class="image-placeholder">✨</div>
+                </div>
+            </div>
+        </div>
+    </section>
 
+    <section class="about-values">
+        <div class="container">
+            <h2>Our Core Values</h2>
+            <div class="values-grid">
+                <div class="value-card">
+                    <h3>🎯 Quality</h3>
+                    <p>Premium fabrics, impeccable craftsmanship, and rigorous quality control ensure every piece exceeds expectations.</p>
+                </div>
+                <div class="value-card">
+                    <h3>💫 Elegance</h3>
+                    <p>Sophisticated designs that blend functionality with timeless style, creating professional confidence.</p>
+                </div>
+                <div class="value-card">
+                    <h3>🤝 Integrity</h3>
+                    <p>Transparent pricing, honest communication, and genuine customer care form the foundation of our business.</p>
+                </div>
+                <div class="value-card">
+                    <h3>🌟 Innovation</h3>
+                    <p>Continuously evolving our collections to meet the changing needs of modern professionals.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="about-ordering">
+        <div class="container">
+            <h2>How to Order</h2>
+            <div class="order-steps">
+                <div class="step">
+                    <div class="step-number">1</div>
+                    <h3>Browse Collection</h3>
+                    <p>Explore our curated selection online</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">2</div>
+                    <h3>Select Items</h3>
+                    <p>Choose sizes, colors, and quantities</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">3</div>
+                    <h3>Contact Us</h3>
+                    <p>Reach out via email or phone</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">4</div>
+                    <h3>Secure Payment</h3>
+                    <p>Complete payment with confidence</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">5</div>
+                    <h3>Fast Delivery</h3>
+                    <p>Receive your premium attire</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h3>✨ SINCERE OUTLINE</h3>
+                    <p>Premium professional attire for beauty and healthcare practitioners.</p>
+                </div>
+                <div class="footer-col">
+                    <h4>Quick Links</h4>
+                    <a href="shop.html">Shop</a>
+                    <a href="collections.html">Collections</a>
+                    <a href="about.html">About Us</a>
+                    <a href="contact.html">Contact</a>
+                </div>
+                <div class="footer-col">
+                    <h4>Contact Info</h4>
+                    <p>📧 sincere_outline@hotmail.com</p>
+                    <p>📞 +27 (065) 815-7430</p>
+                    <p>🕒 Mon-Fri, 9AM-6PM</p>
+                </div>
+                <div class="footer-col">
+                    <h4>Shipping</h4>
+                    <p>🚚 Free shipping on orders from R600.00</p>
+                    <p>💳 Secure payment options</p>
+                    <p>📦 Premium tracking included</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Sincere Outline — Refined Professional Attire</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
 </body>
 </html>

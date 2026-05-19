@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checkout | Sincere Outline</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="container nav-flex">
+            <div class="logo">
+                <h1>✨ SINCERE OUTLINE</h1>
+                <p>Premium Professional Attire</p>
+            </div>
+            <div class="nav-links">
+                <a href="index.html">Home</a>
+                <a href="shop.html">Shop</a>
+                <a href="collections.html">Collections</a>
+                <a href="about.html">About</a>
+                <a href="contact.html">Contact</a>
+                <a href="cart.html" class="cart-link">
+                    🛒 <span class="cart-count" id="cartCount">0</span>
+                </a>
+            </div>
+            <button class="mobile-menu-btn">☰</button>
+        </div>
+    </nav>
+
+    <section class="checkout-header">
+        <div class="container">
+            <h1>Checkout</h1>
+            <div class="checkout-steps">
+                <div class="checkout-step completed">
+                    <span class="step-indicator">1</span>
+                    <span>Cart</span>
+                </div>
+                <div class="step-line"></div>
+                <div class="checkout-step active">
+                    <span class="step-indicator">2</span>
+                    <span>Details</span>
+                </div>
+                <div class="step-line"></div>
+                <div class="checkout-step">
+                    <span class="step-indicator">3</span>
+                    <span>Confirm</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="checkout-content">
+        <div class="container">
+            <div class="checkout-layout">
+                <div class="checkout-form-section">
+                    <h2>Your Details</h2>
+                    <p>Please fill in your information to complete your order</p>
+                    
+                    <form id="checkoutForm" onsubmit="submitOrder(event)">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="firstName">First Name *</label>
+                                <input type="text" id="firstName" required placeholder="Your first name">
+                            </div>
+                            <div class="form-group">
+                                <label for="lastName">Last Name *</label>
+                                <input type="text" id="lastName" required placeholder="Your last name">
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="email">Email Address *</label>
+                            <input type="email" id="email" required placeholder="your.email@example.com">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="phone">Phone Number *</label>
+                            <input type="tel" id="phone" required placeholder="+27 68 133 3036">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="address">Delivery Address *</label>
+                            <textarea id="address" rows="3" required placeholder="Your complete delivery address"></textarea>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="city">City *</label>
+                                <input type="text" id="city" required placeholder="Your city">
+                            </div>
+                            <div class="form-group">
+                                <label for="province">Province *</label>
+                                <select id="province" required>
+                                    <option value="">Select province</option>
+                                    <option value="Gauteng">Gauteng</option>
+                                    <option value="Western Cape">Western Cape</option>
+                                    <option value="KwaZulu-Natal">KwaZulu-Natal</option>
+                                    <option value="Eastern Cape">Eastern Cape</option>
+                                    <option value="Free State">Free State</option>
+                                    <option value="Mpumalanga">Mpumalanga</option>
+                                    <option value="Limpopo">Limpopo</option>
+                                    <option value="North West">North West</option>
+                                    <option value="Northern Cape">Northern Cape</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="notes">Special Instructions / Notes</label>
+                            <textarea id="notes" rows="2" placeholder="Any special requests, size preferences, color choices, etc."></textarea>
+                        </div>
+                    </form>
+                </div>
+
+                <div class="checkout-summary-section">
+                    <h2>Order Summary</h2>
+                    <div class="order-items" id="orderItems"></div>
+                    
+                    <div class="order-totals">
+                        <div class="summary-row">
+                            <span>Subtotal</span>
+                            <span id="summarySubtotal">R0.00</span>
+                        </div>
+                        <div class="summary-row">
+                            <span>Shipping</span>
+                            <span id="summaryShipping">R0.00</span>
+                        </div>
+                        <div class="summary-row total">
+                            <span>Total</span>
+                            <span id="summaryTotal">R0.00</span>
+                        </div>
+                    </div>
+
+                    <div class="shipping-info-box">
+                        <h4>🚚 Shipping Information</h4>
+                        <p>Free shipping on orders from R600.00</p>
+                        <p>Standard delivery: 3-5 business days</p>
+                    </div>
+
+                    <button type="button" class="whatsapp-btn" onclick="submitOrder()">
+                        📱 Send Order via WhatsApp
+                    </button>
+                    <p class="whatsapp-note">You'll be redirected to WhatsApp to confirm your order with our team.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Order Confirmation Modal -->
+    <div class="modal" id="confirmModal">
+        <div class="modal-content">
+            <h3>📋 Order Summary Preview</h3>
+            <div class="modal-order-details" id="modalOrderDetails"></div>
+            <div class="modal-actions">
+                <button class="cancel-btn" onclick="closeModal()">Edit Order</button>
+                <button class="confirm-btn" onclick="sendToWhatsApp()">📱 Send to WhatsApp</button>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h3>✨ SINCERE OUTLINE</h3>
+                    <p>Premium professional attire for beauty and healthcare practitioners.</p>
+                </div>
+                <div class="footer-col">
+                    <h4>Quick Links</h4>
+                    <a href="shop.html">Shop</a>
+                    <a href="collections.html">Collections</a>
+                    <a href="about.html">About Us</a>
+                    <a href="contact.html">Contact</a>
+                </div>
+                <div class="footer-col">
+                    <h4>Contact Info</h4>
+                    <p>📧 sincere_outline@hotmail.com</p>
+                    <p>📞 +27 (065) 815-7430</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Sincere Outline — Refined Professional Attire</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
