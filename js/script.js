@@ -470,8 +470,8 @@ function sendToWhatsApp() {
     
     message += `%0APlease confirm my order and provide payment details. Thank you! 🙏`;
     
-    // WhatsApp number: +27 68 133 3036 (remove + and spaces)
-    const whatsappNumber = '27681333036';
+    // WhatsApp number: 
+    const whatsappNumber = '27658157430';
     const whatsappURL = `https://wa.me/${whatsappNumber}?text=${message}`;
     
     closeModal();
